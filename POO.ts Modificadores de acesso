@@ -1,0 +1,22 @@
+class ContaBancaria {
+  private saldo: number;
+
+  constructor(saldoInicial: number = 0) {
+    this.saldo = saldoInicial;
+  }
+
+  depositar(valor: number): void {
+    if (valor > 0) {
+      this.saldo += valor;
+    }
+  }
+
+  consultarSaldo(): number {
+    return this.saldo;
+  }
+}
+
+const conta = new ContaBancaria(100);
+conta.depositar(50);
+
+console.log(`Saldo: R$ ${conta.consultarSaldo().toFixed(2)}`);
